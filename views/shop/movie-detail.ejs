@@ -1,0 +1,18 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main class="centered">
+            <h1><%= movie.title %></h1>
+            <hr>
+            <div class="image">
+                <img src="/<%= movie.imageUrl %>" alt="<%= movie.title %>">
+            </div>
+            <h2><%= movie.price %></h2>
+            <p><%= movie.description %></p>
+            <% if (isAuthenticated) { %>
+                <%- include('../includes/add-to-cart.ejs', {movie: movie}) %>
+            <% } %>
+        </main>
+        <%- include('../includes/end.ejs') %>

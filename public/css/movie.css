@@ -1,0 +1,27 @@
+.movie-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.movie-item {
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem;
+}
+
+.movie__title {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.movie__price {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+}
+
+.movie__description {
+    text-align: center;
+}

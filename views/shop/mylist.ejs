@@ -24,12 +24,6 @@
                     <% }) %>
                 </ul>
                 <hr>
-                <div class="centered">
-                    <form action="/create-favorite" method="POST">
-                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                        <button type="submit" class="btn">Make Favorite!</button>
-                    </form>
-                </div>
                 
             <% } else { %>
                 <h1>No Movies in Your List!</h1>

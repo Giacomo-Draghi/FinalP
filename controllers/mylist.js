@@ -166,11 +166,14 @@ exports.postMyReview = (req, res, next) => {
   console.log(allReviews);
   Movie.findById(prodId)
     .then(movie => {
-      res.render('shop/movie-detail', {
+      Review.find({ movieId: prodId})
+      .then(review => {
+        res.render('shop/movie-detail', {
         movie: movie,
         pageTitle: movie.title,
         path: '/movies',
-        review
+        review: review
+      })
       });
     })
     .catch(err => {

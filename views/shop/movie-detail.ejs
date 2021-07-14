@@ -9,10 +9,34 @@
             <div class="image">
                 <img src="/<%= movie.imageUrl %>" alt="<%= movie.title %>">
             </div>
-            <h2><%= movie.price %></h2>
+            <h2>Rated: <%= movie.subtitle %></h2>
             <p><%= movie.description %></p>
             <% if (isAuthenticated) { %>
-                <%- include('../includes/add-to-cart.ejs', {movie: movie}) %>
+                <%- include('../includes/add-to-mylist.ejs', {movie: movie}) %>
+            <% } %>
+            <div class="centered">
+               <% if (isAuthenticated) { %>
+                <%- include('../includes/add-review.ejs', {movie: movie}) %>
+            <% } %> 
+            </div>
+            <hr>
+            <% if (review.length > 0) { %>
+                <div class="grid">
+                    <% let i=1; for (let reviews of review) { %>
+                        <article class="card movie-item">
+                            <header class="card__header">
+                                <h1 class="movie__title">Review N°: <%= i %></h1>
+                            </header>
+                            <div class="card__content">
+                                <p class="movie__description"><%= reviews.review %></p>
+                            </div>
+                            <div class="card__actions">
+                            </div>
+                        </article>
+                    <% i ++;} %>
+                </div>
+            <% } else { %>
+                <h1>No Reviews Found!</h1>
             <% } %>
         </main>
         <%- include('../includes/end.ejs') %>

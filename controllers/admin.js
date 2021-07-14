@@ -59,13 +59,13 @@ exports.postAddMovie = (req, res, next) => {
   const imageUrl = image.path;
 
   const movie = new Movie({
-    // _id: new mongoose.Types.ObjectId('5badf72403fd8b5be0366e81'),
     title: title,
     subtitle: subtitle,
     description: description,
     imageUrl: imageUrl,
     userId: req.user
   });
+  console.log(movie);
   movie
     .save()
     .then(result => {

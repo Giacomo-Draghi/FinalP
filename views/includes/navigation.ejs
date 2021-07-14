@@ -7,14 +7,11 @@
                 <a class="<%= path === '/' ? 'active' : '' %>" href="/">Shop</a>
             </li>
             <li class="main-header__item">
-                <a class="<%= path === '/movies' ? 'active' : '' %>" href="/movies">Movies</a>
+                <a class="<%= path === '/movies' ? 'active' : '' %>" href="/movie-list">Movies</a>
             </li>
             <% if (isAuthenticated) { %>
                 <li class="main-header__item">
-                    <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">Cart</a>
-                </li>
-                <li class="main-header__item">
-                    <a class="<%= path === '/favorites' ? 'active' : '' %>" href="/favorites">Favorites</a>
+                    <a class="<%= path === '/mylist' ? 'active' : '' %>" href="/mylist">My List</a>
                 </li>
                 <li class="main-header__item">
                     <a class="<%= path === '/admin/add-movie' ? 'active' : '' %>" href="/admin/add-movie">Add Movie
@@ -52,14 +49,11 @@
             <a class="<%= path === '/' ? 'active' : '' %>" href="/">Shop</a>
         </li>
         <li class="mobile-nav__item">
-            <a class="<%= path === '/movies' ? 'active' : '' %>" href="/movies">Movies</a>
+            <a class="<%= path === '/movies' ? 'active' : '' %>" href="/movie-list">Movies</a>
         </li>
         <% if (isAuthenticated) { %>
             <li class="mobile-nav__item">
-                <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">Cart</a>
-            </li>
-            <li class="mobile-nav__item">
-                <a class="<%= path === '/favorites' ? 'active' : '' %>" href="/favorites">Favorites</a>
+                <a class="<%= path === '/mylist' ? 'active' : '' %>" href="/mylist">My List</a>
             </li>
             <li class="mobile-nav__item">
                 <a class="<%= path === '/admin/add-movie' ? 'active' : '' %>" href="/admin/add-movie">Add Movie

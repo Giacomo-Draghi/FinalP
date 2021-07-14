@@ -1,3 +1,4 @@
+const PORT = process.env.PORT || 5000;
 const path = require('path');
 
 const express = require('express');
@@ -47,7 +48,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const adminRoutes = require('./routes/admin');
-const shopRoutes = require('./routes/shop');
+const shopRoutes = require('./routes/mylist');
 const authRoutes = require('./routes/auth');
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -109,10 +110,26 @@ app.use((error, req, res, next) => {
   });
 });
 
+const corsOptions = {
+  origin: "https://shop.herokuapp.com/",
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+
+const options = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  family: 4
+};
+
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb+srv://giacomo:963741@cluster0.btxa6.mongodb.net/film?retryWrites=true&w=majority";
+
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    app.listen(3000);
+    app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
   })
   .catch(err => {
     console.log(err);

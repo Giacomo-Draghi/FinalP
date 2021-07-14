@@ -18,13 +18,13 @@
                                 alt="<%= movie.title %>">
                         </div>
                         <div class="card__content">
-                            <h2 class="movie__price">$<%= movie.price %></h2>
+                            <h2 class="movie__subtitle">Rated: <%= movie.subtitle %></h2>
                             <p class="movie__description"><%= movie.description %></p>
                         </div>
                         <div class="card__actions">
-                            <a href="/movies/<%= movie._id %>" class="btn">Details</a>
+                            <a href="/movie-detail/<%= movie._id %>" class="btn">Details</a>
                             <% if (isAuthenticated) { %>
-                                <%- include('../includes/add-to-cart.ejs', {movie: movie}) %>
+                                <%- include('../includes/add-to-mylist.ejs', {movie: movie}) %>
                             <% } %>
                         </div>
                     </article>

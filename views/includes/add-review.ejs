@@ -1,0 +1,11 @@
+<hr>
+<form action="/add-review" method="post">
+    <div class="form-control">
+        <label for="review">Review</label>
+        <input
+            type="text" name="review" id="review">
+    </div>
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <button class="btn" type="submit">Add Review</button>
+    <input type="hidden" name="movieId" value="<%= movie._id %>">
+</form>
